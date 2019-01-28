@@ -11,27 +11,35 @@ import Summary from '../pages/summary';
 import Navbar from '../Compnents/navbar'
 import createHistory from 'history/createBrowserHistory'
 import { URL } from './constants';
-const history = createHistory()
+const history = createHistory();
+
 
 export default class ApplicationRouter extends Component {
+    defaultContainer() {
+        return(
+            <div>
+                <Navbar/>
+                <Route path={URL.EDUCATION} component={Education} />
+                <Route path={URL.EXPERIENCE} component={Experience} />
+                <Route path={URL.LANGUAGES} component={Languages} />
+                <Route path={URL.PERSONAL_INFO} component={Personal_info} />
+                <Route path={URL.RESAULT} component={Resault} />
+                <Route path={URL.SKILLS} component={Skills} />
+                <Route path={URL.SUMMARY} component={Summary} />
+            </div>
+        );
+    };
+
     render() {
-                return (
-                        <div>
-                                <Navbar/>
-                                <Router  history={history}>
-                                        <Switch>
-                                                <Route exact path={URL.HOME} component={Home} />
-                                                <Route exact path={URL.EDUCATION} component={Education} />
-                                                <Route exact path={URL.EXPERIENCE} component={Experience} />
-                                                <Route exact path={URL.LANGUAGES} component={Languages} />
-                                                <Route exact path={URL.PERSONAL_INFO} component={Personal_info} />
-                                                <Route exact path={URL.RESAULT} component={Resault} />
-                                                <Route exact path={URL.SKILLS} component={Skills} />
-                                                <Route exact path={URL.SUMMARY} component={Summary} />
-                                                <Redirect to={URL.HOME} />
-                                        </Switch>
-                                </Router>
-                        </div>
-                );
-        }
+        return (
+            <div>
+                <Router history={history}>
+                    <Switch>
+                        <Route exact path= {URL.HOME} component={Home}/>
+                        <Route component={this.defaultContainer}/>
+                    </Switch>
+                </Router>
+            </div>
+        );
+    };
 };
