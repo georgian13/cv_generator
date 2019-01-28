@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { URL } from '../../config/constants';
-import { Button, Link } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import './index.css';
 
 export default class Home extends Component {
