@@ -1,12 +1,14 @@
-.createButton {
-    text-align: center;
+.home {
+    display: flex;
     align-items: center;
     justify-content: center;
-    background-color: green;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../../action/home_background.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 };
 
-.home {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+.createButton {
+    background-color: green;
 }
